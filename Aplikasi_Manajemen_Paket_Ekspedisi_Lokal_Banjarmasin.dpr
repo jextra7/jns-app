@@ -1,0 +1,29 @@
+program Aplikasi_Manajemen_Paket_Ekspedisi_Lokal_Banjarmasin;
+
+uses
+  Vcl.Forms,
+  System.SysUtils,
+  UMainMenu in 'UMainMenu.pas' {FormMainMenu},
+  UManajemenpaket in 'UManajemenpaket.pas' {Form14},
+  UManajemenPelanggan in 'UManajemenPelanggan.pas' {Form1},
+  UManajemenGudang in 'UManajemenGudang.pas' {Form2},
+  UManajemenAdmin in 'UManajemenAdmin.pas' {Form3},
+  UManajemenKurir in 'UManajemenKurir.pas' {Form4},
+  UManajemenPembayaran in 'UManajemenPembayaran.pas' {Form5},
+  ULogin in 'ULogin.pas' {Login};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  
+  // Buat form utama
+  Application.CreateForm(TFormMainMenu, FormMainMenu);
+  
+  // Set exception handler
+  Application.OnException := FormMainMenu.HandleException;
+  
+  // Jalankan aplikasi
+  Application.Run;
+end.
