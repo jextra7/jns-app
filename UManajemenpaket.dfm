@@ -299,6 +299,15 @@ object Form14: TForm14
         TabOrder = 13
         OnClick = BtnKeluarClick
       end
+      object BtnCetakResi: TBitBtn
+        Left = 315
+        Top = 216
+        Width = 97
+        Height = 25
+        Caption = 'Cetak Resi'
+        TabOrder = 17
+        OnClick = BtnCetakResiClick
+      end
     end
   end
   object Panel3: TPanel

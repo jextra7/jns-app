@@ -20,6 +20,7 @@ object Form2: TForm2
     Height = 41
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 798
     object Label1: TLabel
       Left = 280
       Top = 8
@@ -41,6 +42,7 @@ object Form2: TForm2
     Height = 250
     Align = alTop
     TabOrder = 1
+    ExplicitWidth = 798
     object GroupBox1: TGroupBox
       Left = 8
       Top = 8
@@ -172,6 +174,21 @@ object Form2: TForm2
     Height = 259
     Align = alClient
     TabOrder = 2
+    ExplicitWidth = 798
+    ExplicitHeight = 251
+    object Label7: TLabel
+      Left = 16
+      Top = 16
+      Width = 159
+      Height = 21
+      Caption = 'Daftar Paket Gudang'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1
@@ -223,19 +240,6 @@ object Form2: TForm2
           Visible = True
         end>
     end
-    object Label7: TLabel
-      Left = 16
-      Top = 16
-      Width = 151
-      Height = 19
-      Caption = 'Daftar Paket Gudang'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
     object DBGrid2: TDBGrid
       Left = 16
       Top = 300
@@ -246,8 +250,8 @@ object Form2: TForm2
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
-      TitleFont.Height = -12
-      TitleFont.Name = 'Segoe UI'
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
     end
   end
@@ -286,16 +290,18 @@ object Form2: TForm2
       'SELECT * FROM paket WHERE id_gudang = :id_gudang')
     Params = <
       item
-        DataType = ftUnknown
         Name = 'id_gudang'
-        ParamType = ptUnknown
       end>
-    Left = 456
-    Top = 520
+    Left = 728
+    Top = 456
+    ParamData = <
+      item
+        Name = 'id_gudang'
+      end>
   end
   object DataSource2: TDataSource
     DataSet = ZQueryPaket
-    Left = 520
-    Top = 520
+    Left = 728
+    Top = 504
   end
 end

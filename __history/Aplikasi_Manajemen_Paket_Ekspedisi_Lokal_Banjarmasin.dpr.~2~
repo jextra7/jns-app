@@ -21,7 +21,7 @@ begin
   
   // Buat form utama
   Application.CreateForm(TFormMainMenu, FormMainMenu);
-  Application.CreateForm(TFormResi, FormResi);
+  Application.CreateForm(TForm6, Form6);
   // Set exception handler
   Application.OnException := FormMainMenu.HandleException;
   

@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls,
   Vcl.Grids, Vcl.DBGrids, Data.DB, ZAbstractRODataset, ZAbstractDataset, 
-  ZDataset, ZAbstractConnection, ZConnection, Vcl.Buttons;
+  ZDataset, ZAbstractConnection, ZConnection, Vcl.Buttons, UFormResi;
 
 type
   TForm14 = class(TForm)
@@ -55,6 +55,7 @@ type
     procedure BtnKeluarClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure FormCreate(Sender: TObject);
+    procedure BtnCetakResiClick(Sender: TObject);
   private
     { Private declarations }
     procedure KosongkanForm;
@@ -469,6 +470,40 @@ begin
         CbIdGudang.ItemIndex := i;
         Break;
       end;
+    end;
+  end;
+end;
+
+procedure TForm14.BtnCetakResiClick(Sender: TObject);
+begin
+  if EdtNoPaket.Text = '' then
+  begin
+    ShowMessage('Pilih data paket yang akan dicetak resinya!');
+    Exit;
+  end;
+
+  try
+    // Cek apakah form sudah ada, jika belum buat baru
+    if not Assigned(FormResi) then
+      Application.CreateForm(TFormResi, FormResi);
+      
+    // Pastikan form dibuat dengan benar
+    if not Assigned(FormResi) then
+    begin
+      ShowMessage('Gagal membuat form resi');
+      Exit;
+    end;
+    
+    // Tampilkan form terlebih dahulu untuk memastikan komponen ter-inisialisasi
+    FormResi.Show;
+    Application.ProcessMessages;
+    
+    // Panggil method untuk mencetak resi dengan mengirimkan koneksi database
+    FormResi.CetakResi(ZConnection1, EdtNoPaket.Text);
+  except
+    on E: Exception do
+    begin
+      ShowMessage('Error saat mencetak resi: ' + E.Message);
     end;
   end;
 end;

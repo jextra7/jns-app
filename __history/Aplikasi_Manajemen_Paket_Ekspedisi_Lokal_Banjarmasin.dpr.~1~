@@ -10,8 +10,7 @@ uses
   UManajemenAdmin in 'UManajemenAdmin.pas' {Form3},
   UManajemenKurir in 'UManajemenKurir.pas' {Form4},
   UManajemenPembayaran in 'UManajemenPembayaran.pas' {Form5},
-  ULogin in 'ULogin.pas' {Login},
-  UFormResi in 'UFormResi.pas' {Form6};
+  ULogin in 'ULogin.pas' {Login};
 
 {$R *.res}
 
@@ -21,7 +20,7 @@ begin
   
   // Buat form utama
   Application.CreateForm(TFormMainMenu, FormMainMenu);
-  Application.CreateForm(TFormResi, FormResi);
+  
   // Set exception handler
   Application.OnException := FormMainMenu.HandleException;
   

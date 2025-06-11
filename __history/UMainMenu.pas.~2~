@@ -27,8 +27,6 @@ type
     ZConnection1: TZConnection;
     LblUserInfo: TLabel;
     BtnLogout: TBitBtn;
-    Label5: TLabel;
-    Label6: TLabel;
     procedure BtnPaketClick(Sender: TObject);
     procedure BtnPelangganClick(Sender: TObject);
     procedure BtnGudangClick(Sender: TObject);
