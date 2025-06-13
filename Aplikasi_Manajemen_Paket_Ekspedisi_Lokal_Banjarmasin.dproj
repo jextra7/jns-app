@@ -154,7 +154,11 @@
             <Form>Login</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UFormResi.pas">
+        <DCCReference Include="UResetPassword.pas">
+            <Form>FormResetPassword</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UKeamanan.pas">
             <Form>Form6</Form>
             <FormType>dfm</FormType>
         </DCCReference>

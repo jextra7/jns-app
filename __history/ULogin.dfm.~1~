@@ -28,7 +28,7 @@ object Login: TLogin
     object Label1: TLabel
       Left = 152
       Top = 14
-      Width = 98
+      Width = 96
       Height = 21
       Caption = 'FORM LOGIN'
       Font.Charset = DEFAULT_CHARSET
@@ -49,21 +49,21 @@ object Login: TLogin
     object Label2: TLabel
       Left = 48
       Top = 32
-      Width = 59
+      Width = 62
       Height = 15
       Caption = 'Username :'
     end
     object Label3: TLabel
       Left = 48
       Top = 80
-      Width = 56
+      Width = 59
       Height = 15
       Caption = 'Password :'
     end
     object LblLupaPassword: TLabel
       Left = 176
       Top = 160
-      Width = 84
+      Width = 90
       Height = 15
       Cursor = crHandPoint
       Caption = 'Lupa Password?'
@@ -123,10 +123,9 @@ object Login: TLogin
   end
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF16
-    Catalog = ''
+    AutoEncodeStrings = False
     Properties.Strings = (
       'controls_cp=CP_UTF16')
-    DisableSavepoints = False
     HostName = 'localhost'
     Port = 3306
     Database = 'db_ekspedisi'

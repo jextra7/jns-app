@@ -11,8 +11,7 @@ uses
   UManajemenKurir in 'UManajemenKurir.pas' {Form4},
   UManajemenPembayaran in 'UManajemenPembayaran.pas' {Form5},
   ULogin in 'ULogin.pas' {Login},
-  UResetPassword in 'UResetPassword.pas' {FormResetPassword},
-  UKeamanan in 'UKeamanan.pas' {FormKeamanan};
+  UResetPassword in 'UResetPassword.pas' {FormResetPassword};
 
 {$R *.res}
 
@@ -22,7 +21,8 @@ begin
   
   // Buat form utama
   Application.CreateForm(TFormMainMenu, FormMainMenu);
-
+  Application.CreateForm(TFormResi, FormResi);
+  // Set exception handler
   Application.OnException := FormMainMenu.HandleException;
   
   // Jalankan aplikasi

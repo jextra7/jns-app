@@ -12,7 +12,7 @@ uses
   UManajemenPembayaran in 'UManajemenPembayaran.pas' {Form5},
   ULogin in 'ULogin.pas' {Login},
   UResetPassword in 'UResetPassword.pas' {FormResetPassword},
-  UKeamanan in 'UKeamanan.pas' {FormKeamanan};
+  UKeamanan in 'UKeamanan.pas' {Form6};
 
 {$R *.res}
 
@@ -22,7 +22,9 @@ begin
   
   // Buat form utama
   Application.CreateForm(TFormMainMenu, FormMainMenu);
-
+  Application.CreateForm(TFormResi, FormResi);
+  Application.CreateForm(TForm6, Form6);
+  // Set exception handler
   Application.OnException := FormMainMenu.HandleException;
   
   // Jalankan aplikasi

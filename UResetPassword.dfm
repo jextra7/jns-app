@@ -1,10 +1,10 @@
-object Login: TLogin
+object FormResetPassword: TFormResetPassword
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
-  Caption = 'Login'
-  ClientHeight = 250
+  Caption = 'Reset Password'
+  ClientHeight = 320
   ClientWidth = 400
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -13,7 +13,6 @@ object Login: TLogin
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
-  OnCreate = FormCreate
   OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
@@ -26,14 +25,14 @@ object Login: TLogin
     ParentBackground = False
     TabOrder = 0
     object Label1: TLabel
-      Left = 152
-      Top = 14
-      Width = 98
-      Height = 21
-      Caption = 'FORM LOGIN'
+      Left = 16
+      Top = 12
+      Width = 265
+      Height = 25
+      Caption = 'FORM RESET PASSWORD'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -16
+      Font.Height = -19
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
@@ -43,72 +42,84 @@ object Login: TLogin
     Left = 0
     Top = 49
     Width = 400
-    Height = 201
+    Height = 271
     Align = alClient
     TabOrder = 1
     object Label2: TLabel
-      Left = 48
-      Top = 32
-      Width = 59
+      Left = 24
+      Top = 24
+      Width = 62
       Height = 15
       Caption = 'Username :'
     end
     object Label3: TLabel
-      Left = 48
-      Top = 80
-      Width = 56
+      Left = 24
+      Top = 72
+      Width = 35
       Height = 15
-      Caption = 'Password :'
+      Caption = 'Email :'
     end
-    object LblLupaPassword: TLabel
-      Left = 176
-      Top = 160
-      Width = 84
+    object Label4: TLabel
+      Left = 24
+      Top = 120
+      Width = 125
       Height = 15
-      Cursor = crHandPoint
-      Caption = 'Lupa Password?'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlue
-      Font.Height = -12
-      Font.Name = 'Segoe UI'
-      Font.Style = [fsUnderline]
-      ParentFont = False
-      OnClick = LblLupaPasswordClick
+      Caption = 'Pertanyaan Keamanan :'
+    end
+    object Label5: TLabel
+      Left = 24
+      Top = 168
+      Width = 114
+      Height = 15
+      Caption = 'Jawaban Keamanan :'
     end
     object EdtUsername: TEdit
-      Left = 120
-      Top = 32
-      Width = 225
+      Left = 24
+      Top = 40
+      Width = 345
       Height = 23
       TabOrder = 0
     end
-    object EdtPassword: TEdit
-      Left = 120
-      Top = 80
-      Width = 225
+    object EdtEmail: TEdit
+      Left = 24
+      Top = 88
+      Width = 345
       Height = 23
-      PasswordChar = '*'
       TabOrder = 1
     end
-    object BtnLogin: TBitBtn
-      Left = 120
-      Top = 120
-      Width = 97
+    object EdtPertanyaanKeamanan: TEdit
+      Left = 24
+      Top = 136
+      Width = 345
+      Height = 23
+      TabOrder = 2
+    end
+    object EdtJawabanKeamanan: TEdit
+      Left = 24
+      Top = 184
+      Width = 345
+      Height = 23
+      TabOrder = 3
+    end
+    object BtnResetPassword: TBitBtn
+      Left = 64
+      Top = 224
+      Width = 129
       Height = 33
-      Caption = 'Login'
+      Caption = 'Reset Password'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 2
-      OnClick = BtnLoginClick
+      TabOrder = 4
+      OnClick = BtnResetPasswordClick
     end
     object BtnBatal: TBitBtn
-      Left = 248
-      Top = 120
-      Width = 97
+      Left = 208
+      Top = 224
+      Width = 129
       Height = 33
       Caption = 'Batal'
       Font.Charset = DEFAULT_CHARSET
@@ -117,29 +128,8 @@ object Login: TLogin
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 5
       OnClick = BtnBatalClick
     end
-  end
-  object ZConnection: TZConnection
-    ControlsCodePage = cCP_UTF16
-    Catalog = ''
-    Properties.Strings = (
-      'controls_cp=CP_UTF16')
-    DisableSavepoints = False
-    HostName = 'localhost'
-    Port = 3306
-    Database = 'db_ekspedisi'
-    User = 'root'
-    Password = ''
-    Protocol = 'mysql'
-    Left = 328
-    Top = 8
-  end
-  object ZQueryLogin: TZQuery
-    Connection = ZConnection
-    Params = <>
-    Left = 368
-    Top = 8
   end
 end

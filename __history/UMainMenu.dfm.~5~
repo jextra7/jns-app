@@ -18,7 +18,7 @@ object FormMainMenu: TFormMainMenu
     Left = 384
     Top = 104
     Width = 34
-    Height = 15
+    Height = 167
     Caption = 'Label5'
   end
   object Panel1: TPanel
@@ -88,7 +88,7 @@ object FormMainMenu: TFormMainMenu
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 272
+      Left = 312
       Top = 400
       Width = 272
       Height = 23
